@@ -12,7 +12,7 @@ Add the following entry in your Package.swift to start using `FeatherMail`:
 .package(url: "https://github.com/feathercms/feather-mail", from: "1.0.0"),
 ```
 
-and FeatherMail dependency to your target:
+and the `FeatherMail` dependency to your target:
 
 ```swift
 .product(name: "FeatherMail", package: "feather-mail"),
@@ -21,11 +21,14 @@ and FeatherMail dependency to your target:
 Mail provider services
 
 ```swift
-.product(name: "FeatherSMTP", package: "Feather-mail"),
-.product(name: "FeatherSES", package: "Feather-mail"),
+# SMTP
+.product(name: "FeatherSMTPMail", package: "feather-mail"),
+
+# SES
+.product(name: "FeatherSESMail", package: "feather-mail"),
 ```    
 
-## FeatherSES
+## FeatherSESMail
 
 Simple usage
 
@@ -69,7 +72,7 @@ try await client.shutdown()
 try await eventLoopGroup.shutdownGracefully()
 ```
 
-## SMTP
+## FeatherSMTPMail
 
 Simple usage
 

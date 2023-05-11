@@ -12,7 +12,6 @@ let package = Package(
         .library(name: "FeatherSMTPMail", targets: ["FeatherSMTPMail"]),
         .library(name: "NIOSMTP", targets: ["NIOSMTP"]),
         .library(name: "SotoSESv2", targets: ["SotoSESv2"]),
-        
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-log", from: "1.5.0"),
@@ -49,16 +48,12 @@ let package = Package(
             .product(name: "NIOSSL", package: "swift-nio-ssl"),
             .product(name: "Logging", package: "swift-log"),
         ]),
-        
         .testTarget(name: "FeatherSMTPMailTests", dependencies: [
             .target(name: "FeatherSMTPMail"),
         ]),
         .testTarget(name: "FeatherSESMailTests", dependencies: [
             .target(name: "FeatherSESMail"),
         ]),
-        
-        // MARK: - feather tests
-        
         .testTarget(name: "NIOSMTPTests", dependencies: [
             .target(name: "NIOSMTP"),
         ]),
